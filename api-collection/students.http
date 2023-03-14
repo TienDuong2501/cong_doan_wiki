@@ -1,0 +1,20 @@
+@baseUrl=http://localhost:3000/api
+
+@resourceName=students
+
+# Student
+
+# @name getAllCities
+GET {{baseUrl}}/{{resourceName}}
+
+
+###
+
+# @name filter
+GET {{baseUrl}}/{{resourceName}}?name_like=T
+
+
+###
+
+# @name pagination
+GET {{baseUrl}}/{{resourceName}}?_page=1&_limit=10

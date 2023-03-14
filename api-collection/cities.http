@@ -1,0 +1,8 @@
+@baseUrl=http://localhost:3000/api
+
+@resourceName=cities
+
+# cities
+
+# @name getAllCities
+GET {{baseUrl}}/{{resourceName}}
