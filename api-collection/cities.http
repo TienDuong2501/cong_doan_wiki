@@ -6,3 +6,7 @@
 
 # @name getAllCities
 GET {{baseUrl}}/{{resourceName}}
+
+###
+# @name getAllCitiesWithFilter
+GET {{baseUrl}}/{{resourceName}}?_limit=10&_page=1
