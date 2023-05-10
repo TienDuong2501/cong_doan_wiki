@@ -1,0 +1,16 @@
+@baseUrl=http://localhost:4000/api
+
+@resourceName=auth/signup
+
+###
+# @name signup
+POST {{baseUrl}}/{{resourceName}}
+Content-Type: application/json
+{ 
+    "firstName": "Thien", 
+    "lastName": "Thieu", 
+    "username": "thientv7", 
+    "email": "thientv7@viettel.com.vn", 
+    "password": "123456a@", 
+    "password_confirmation": "123456a@" 
+}

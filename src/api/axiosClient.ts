@@ -1,30 +1,43 @@
 import axios, { AxiosResponse } from 'axios';
+import { history } from 'utils';
 
 const axiosClient = axios.create({
-    baseURL:'http://localhost:3000/api',
-    headers: {
-        'Content-Type': 'application/json',
-    },
+  baseURL: process.env.REACT_APP_BASE_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
 });
 
 // Add a request interceptor
-axios.interceptors.request.use(function (config) {
+axiosClient.interceptors.request.use(function (config) {
+    config.headers['x-access-token'] = localStorage.getItem('access_token')
+    config.headers['Accept-Language'] = localStorage.getItem("i18nextLng") || 'vi-VN'
     // Do something before request is sent
     return config;
-  }, function (error) {
+  },
+  function (error) {
     // Do something with request error
     return Promise.reject(error);
-  });
+  }
+);
 
 // Add a response interceptor
-axios.interceptors.response.use(function (response: AxiosResponse) {
-    // Any status code that lie within the range of 2xx cause this function to trigger
-    // Do something with response data
-    return response.data;
-  }, function (error) {
-    // Any status codes that falls outside the range of 2xx cause this function to trigger
-    // Do something with response error
+axiosClient.interceptors.response.use(
+  function (response: AxiosResponse) {
+    return response;
+  },
+  function (error) {
+    if (typeof error.response !== 'undefined') {
+      const isLogin = error.response.config.url.includes('signin')
+      if (!isLogin) {
+        if (error?.response?.status === 401) {
+          localStorage.clear();
+          history.push('/signin')
+        }
+      }
+    }
     return Promise.reject(error);
-  });
+  }
+);
 
 export default axiosClient;

@@ -1,0 +1,138 @@
+$primaryColor: #7d76cf;
+$textColor: #27a8e9;
+
+body {
+  // background-color: #e6e6e6;
+  .scssClass {
+    background-color: rgb(119, 3, 119);
+    text-align: center;
+    padding: 10px 0;
+    h2 {
+      color: white;
+      font-family: sans-serif;
+    }
+  }
+
+  // screen signup css
+
+  .signup_header {
+    width: 100%;
+    height: 50px;
+    margin-left: 20px;
+  }
+
+  .textWelcome {
+    font-weight: 300;
+    color: #9095a0ff;
+  }
+
+  .textWelcomeSub {
+    font-weight: 300;
+    color: #9095a0ff;
+  }
+
+  .container_textWelcome {
+    margin-top: 200px;
+  }
+
+  .signup_body {
+    width: 100%;
+    background-color: bisque;
+  }
+
+  .signup_logo {
+    margin-top: 250px;
+  }
+
+  .signup_box {
+    margin-top: 70px;
+    padding-bottom: 50px;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 4px;
+    border-color: #58bceeff;
+  }
+
+  .title_box_signup {
+    font-weight: 600;
+    margin-top: 40px;
+    color: #171a1fff;
+  }
+
+  .loading_button {
+    background-color: #7d76cfff;
+  }
+
+  /* Hover */
+  .loading_button:hover {
+    color: #ffffffff;
+    background: #6960c7ff;
+  }
+  /* Pressed */
+  .loading_button:hover:active {
+    color: #ffffffff;
+    background: #5349bfff;
+  }
+  /* Disabled */
+  .loading_button:disabled {
+    opacity: 0.4;
+  }
+
+  .form_signup {
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 60px;
+  }
+  .container {
+    background-color: rgb(51, 26, 51);
+  }
+
+  .header {
+    background-color: rgb(255, 0, 255);
+  }
+
+  .logo {
+    color: black;
+  }
+
+  .login {
+    color: rgb(247, 3, 3);
+  }
+
+  .title_bold {
+    font-family: OpenSansBold;
+    font-size: 32;
+  }
+
+  .sign_up_text {
+    background-color: $primaryColor;
+    text-transform: capitalize;
+
+    .text_input {
+      // background-color: #F3F4F6FF;
+      font-weight: 400;
+      color: #171a1fff;
+
+      .label {
+        font-size: 14px;
+        line-height: 22px;
+      }
+      /* hover */
+      input:hover {
+        color: #bcc1caff;
+        background: #f3f4f6ff;
+      }
+      /* focused */
+      input:focused {
+        color: #bcc1caff;
+        background: #ffffffff;
+      }
+      /* disabled */
+      input:disabled {
+        color: #bcc1caff;
+        background: #f3f4f6ff;
+      }
+    }
+  }
+}

@@ -1,63 +1,32 @@
 import React, { useEffect } from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
 import './App.css';
-import cityApi from 'api/cityApi';
+import { Route, Switch } from 'react-router-dom';
+import SignInPage from 'features/auth/pages/SignInPage';
+import SignUpPage from 'features/auth/pages/SignUpPage';
+import { DashboardLayout } from 'components/Layout';
+import { NotFound, PrivateRoute } from 'components/Common';
 
 function App() {
-
-  useEffect(() => {
-    cityApi.getAll().then(response => {console.log(response)});
-  });
-
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+    <div>
+      <Switch>
+        {/* <Route path="/signin">
+          <SignInPage />
+        </Route>
+        <Route path="/signup">
+          <SignUpPage />
+        </Route> */}
+
+        <Route path="/cong-doan">
+          <DashboardLayout />
+        </Route>
+        {/* <PrivateRoute path="/open-api">
+        </PrivateRoute> */}
+        <Route>
+          <DashboardLayout />
+          {/* <NotFound /> */}
+        </Route>
+      </Switch>
     </div>
   );
 }
