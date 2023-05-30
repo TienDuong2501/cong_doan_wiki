@@ -63,7 +63,7 @@ module.exports = (env, argv) => {
           // Tự động bundle khi thay đôỉ endtry point
           new CleanWebpackPlugin,
           new HtmlWebpackPlugin({
-              title: 'Open API',
+              title: 'Công đoàn wiki',
               filename: 'index.html'
           }),
         ],

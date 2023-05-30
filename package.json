@@ -79,6 +79,8 @@
     ]
   },
   "devDependencies": {
-    "resolve-url-loader": "^5.0.0"
+    "gh-pages": "^5.0.0",
+    "resolve-url-loader": "^5.0.0",
+    "webpack-cli": "^5.1.1"
   }
 }

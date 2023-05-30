@@ -29,8 +29,8 @@ export function Header() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
+      {/* <AppBar position="static"> */}
+        {/* <Toolbar> */}
           <Typography variant="h6" className={classes.title}>
             { t('Công đoàn wiki') }
           </Typography>
@@ -38,8 +38,8 @@ export function Header() {
           {/* <Button color="inherit" onClick={handleLogoutClick}>
             { t('Sign out') }
           </Button> */}
-        </Toolbar>
-      </AppBar>
+        {/* </Toolbar> */}
+      {/* </AppBar> */}
     </div>
   );
 }
